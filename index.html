@@ -23,7 +23,7 @@
     <h2 id="formTitle">Write your letter</h2>
     <form id="letterForm" autocomplete="off">
       <label for="to">Who is it for?</label>
-      <input id="to" name="to" type="text" maxlength="60" required placeholder="Maria">
+      <input id="to" name="to" type="text" maxlength="60" required placeholder="Jane">
 
       <label for="msg">Your message</label>
       <textarea id="msg" name="msg" rows="8" maxlength="4000" required placeholder="Write what you want to say. We keep every word exactly as you wrote it."></textarea>
@@ -38,7 +38,7 @@
       <p class="hint" id="photoHint">JPG, PNG or WebP. It is resized in your browser and never uploaded.</p>
 
       <label for="from">Your name <span class="opt">(optional)</span></label>
-      <input id="from" name="from" type="text" maxlength="60" placeholder="Jov">
+      <input id="from" name="from" type="text" maxlength="60" placeholder="John">
 
       <button type="submit" class="btn primary big">Generate My Letter</button>
       <p class="hint">Everything stays in your browser. Nothing is sent or saved.</p>
@@ -93,8 +93,21 @@
   </section>
 </main>
 
-<footer class="no-print"><p class="viewer-only"><a href="index.html">Write your own Christmas letter</a></p><p class="sender-only">Made with care for the holidays. Free to use, no account needed.</p></footer>
+<footer class="no-print">
+  <p class="viewer-only">
+    <a href="index.html">Write your own Christmas letter</a>
+  </p>
 
+  <p class="sender-only">
+    Made with care for the holidays. Free to use, no account needed.
+    <br>
+    Created by
+    <a href="https://github.com/jovie10-pixel" target="_blank" rel="noopener noreferrer">
+      JBF
+    </a>
+  </p>
+</footer>
+  
 <script src="designs.js"></script>
 <script src="script.js"></script>
 </body>
