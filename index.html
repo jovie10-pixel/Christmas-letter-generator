@@ -45,6 +45,12 @@
     </form>
   </section>
 
+  <section id="broken" class="card no-print" hidden>
+    <h2>This link doesn't look right</h2>
+    <p>It may have been cut off when it was sent. Ask the sender to share it again.</p>
+    <p><a href="index.html">Write your own Christmas letter</a></p>
+  </section>
+
   <section id="previewSection" class="preview" hidden aria-labelledby="previewTitle">
     <h2 id="previewTitle" class="no-print">Your Christmas letter</h2>
 
@@ -63,18 +69,31 @@
     </article>
 
     <div class="actions no-print">
-      <button class="btn primary" id="again" type="button">Generate Another Design</button>
-      <button class="btn" id="edit" type="button">Edit My Message</button>
+      <button class="btn primary sender-only" id="again" type="button">Generate Another Design</button>
+      <button class="btn sender-only" id="edit" type="button">Edit My Message</button>
       <button class="btn" id="copy" type="button">Copy Text</button>
-      <button class="btn" id="download" type="button">Download TXT</button>
+      <button class="btn sender-only" id="download" type="button">Download TXT</button>
       <button class="btn" id="print" type="button">Print / Save PDF</button>
-      <button class="btn" id="share" type="button" hidden>Share</button>
+      <button class="btn sender-only" id="share" type="button" hidden>Share Text</button>
+      <button class="btn primary sender-only" id="getLink" type="button">Get Link to Send</button>
     </div>
     <p id="status" class="status no-print" role="status" aria-live="polite"></p>
+
+    <div id="linkBox" class="linkbox no-print sender-only" hidden>
+      <h3>Send it to someone</h3>
+      <p class="hint">Anyone with this link sees only your finished letter. They can't see the form or change anything.</p>
+      <input id="linkUrl" type="text" readonly aria-label="Link to your letter">
+      <label id="photoOpt" class="check" hidden><input type="checkbox" id="incPhoto" checked> Include my photo in the link (makes the link longer)</label>
+      <p id="linkNote" class="hint"></p>
+      <div class="actions">
+        <button class="btn primary" id="copyLink" type="button">Copy Link</button>
+        <button class="btn" id="sendLink" type="button" hidden>Send Link</button>
+      </div>
+    </div>
   </section>
 </main>
 
-<footer class="no-print"><p>Made with care for the holidays. Free to use, no account needed.</p></footer>
+<footer class="no-print"><p class="viewer-only"><a href="index.html">Write your own Christmas letter</a></p><p class="sender-only">Made with care for the holidays. Free to use, no account needed.</p></footer>
 
 <script src="designs.js"></script>
 <script src="script.js"></script>
