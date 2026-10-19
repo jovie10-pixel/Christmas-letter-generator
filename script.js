@@ -93,7 +93,8 @@
     if (file.size > 20 * 1024 * 1024) { clearPhoto(); hint.textContent = 'That photo is too large (20 MB max). Please choose a smaller one.'; return; }
     const url = URL.createObjectURL(file), img = new Image();
     img.onload = () => {
-      state.photo = shrink(img, 1200, 0.85); state.photoSmall = shrink(img, 420, 0.62);
+      state.photo = shrink(img, 1000, 0.78);
+      state.photoSmall = shrink(img, 160, 0.30);
       $('photoThumb').src = state.photo; $('photoPrev').hidden = false; hint.textContent = HINT;
       URL.revokeObjectURL(url);
       if (!$('previewSection').hidden) render(); // keep an existing letter in sync
