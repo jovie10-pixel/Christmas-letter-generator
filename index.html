@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A Letter for Christmas</title>
+<meta name="description" content="Turn your personal message into a beautifully designed Christmas letter. Free, private, no sign-up.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%84%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="hero no-print">
+  <svg class="lights" viewBox="0 0 600 40" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 8 Q75 38 150 14 T300 14 T450 14 T600 8" fill="none" stroke="#0f2c20" stroke-width="2"/>
+    <g id="bulbs"></g>
+  </svg>
+  <h1>A Letter for Christmas</h1>
+  <p>Your words, wrapped in Christmas magic.</p>
+</header>
+
+<main>
+  <section class="card no-print" id="formSection" aria-labelledby="formTitle">
+    <h2 id="formTitle">Write your letter</h2>
+    <form id="letterForm" autocomplete="off">
+      <label for="to">Who is it for?</label>
+      <input id="to" name="to" type="text" maxlength="60" required placeholder="Maria">
+
+      <label for="msg">Your message</label>
+      <textarea id="msg" name="msg" rows="8" maxlength="4000" required placeholder="Write what you want to say. We keep every word exactly as you wrote it."></textarea>
+      <p class="hint"><span id="count">0</span> / 4000 characters. Leave a blank line between paragraphs.</p>
+
+      <label for="photo">Add a photo <span class="opt">(optional)</span></label>
+      <input id="photo" name="photo" type="file" accept="image/*">
+      <div id="photoPrev" class="photo-prev" hidden>
+        <img id="photoThumb" alt="Selected photo preview">
+        <button type="button" class="btn" id="photoRemove">Remove photo</button>
+      </div>
+      <p class="hint" id="photoHint">JPG, PNG or WebP. It is resized in your browser and never uploaded.</p>
+
+      <label for="from">Your name <span class="opt">(optional)</span></label>
+      <input id="from" name="from" type="text" maxlength="60" placeholder="Jov">
+
+      <button type="submit" class="btn primary big">Generate My Letter</button>
+      <p class="hint">Everything stays in your browser. Nothing is sent or saved.</p>
+    </form>
+  </section>
+
+  <section id="previewSection" class="preview" hidden aria-labelledby="previewTitle">
+    <h2 id="previewTitle" class="no-print">Your Christmas letter</h2>
+
+    <article id="letter" class="letter" aria-label="Christmas letter">
+      <div class="decor tl"></div><div class="decor tr"></div>
+      <div class="decor bl"></div><div class="decor br"></div>
+      <div class="inner">
+        <div class="motif"></div>
+        <h3 class="greet"></h3>
+        <figure class="photo" hidden><img id="letterPhoto" alt="Photo included with the letter"></figure>
+        <div class="body"></div>
+        <p class="closing"></p>
+        <p class="signoff"></p>
+        <p class="from"></p>
+      </div>
+    </article>
+
+    <div class="actions no-print">
+      <button class="btn primary" id="again" type="button">Generate Another Design</button>
+      <button class="btn" id="edit" type="button">Edit My Message</button>
+      <button class="btn" id="copy" type="button">Copy Text</button>
+      <button class="btn" id="download" type="button">Download TXT</button>
+      <button class="btn" id="print" type="button">Print / Save PDF</button>
+      <button class="btn" id="share" type="button" hidden>Share</button>
+    </div>
+    <p id="status" class="status no-print" role="status" aria-live="polite"></p>
+  </section>
+</main>
+
+<footer class="no-print"><p>Made with care for the holidays. Free to use, no account needed.</p></footer>
+
+<script src="designs.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
